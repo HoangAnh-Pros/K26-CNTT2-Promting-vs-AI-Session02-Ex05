@@ -1,0 +1,20 @@
+Bài 5: Cơ chế In-Context Learning trong Phân loại Review Khách hàng.
+Vấn đề : Khi bạn sử dụng zero-shot và AI xếp đánh giá mỉa mai (đánh giá xấu nhưng vẫn được AI đánh giá là tốt).
+Yêu cầu : - Phân tích cơ chế.
+          - Sửa lỗi bằng Few-shot.
+Giải quyết bài toán :
+Phần 1 : Phân tích cơ chế.
+- Dựa vào mục 2.2 Lesson 02, giải thích cơ chế In-Context Learning : 
++ Techshop thu thập 5000 đánh giá -> sử dụng zero-shot để phân loại cảm xúc ( tiêu cực\tích cực).
++ AI biết mình cần phân loại . Và phân loại theo xác xuất những từ tốt đẹp được xuất hiện nhiều là tích cực và ngược lại.
+Phần 2 : Sửa lỗi bằng few-shot.
+- 3 cặp mẫu ví dụ IP -> OP.
++ Cặp mẫu 1 : 
+InPut : Các bình luận về sản phẩm chỉ nên đúng về hiệu xuất ,thẩm mĩ , mọi bình luận khác với công dụng có thể là mỉa mai về sản phẩm.
+--> OutPut : kết quả chính xác hơn các bình luận về sản phẩm nhận đinh sẽ chính xác hơn.
++ Cặp mẫu 2 : 
+Input : Nhiệt độ trung bình của CPU  được sử dụng là 40-45 độ C mợi phản hồi trên ngưỡng này đều là mỉa mai
+--> OutPut : Không còn đánh giá tích cực cho những phản hồi về NHiệt độ CPU trên ngưỡng 40-45 độ C là tích cực 
++ Cặp mẫu 3 : 
+Input : Thời lượng Pin trung bình của sản phẩm techshop là 9 tiếng -> 1 ngày ,thời gian giao hàng trên toàn quốc trung bình là 4 ngày.
+--> OutPut : Review về thời lượng pin và thời gian giao hàng sẽ chính xác hơn không còn nhận đánh giá mỉa mai là tích cực
